@@ -1,0 +1,70 @@
+<div class="container-fluid">
+    <form [formGroup]="weatherForm">
+        <div class="row">      
+           <label class="col-md-3 col-sm-6">
+                 Country: 
+                 <input type="text" formControlName="country" [(ngModel)]="country" />
+             </label> 
+             <label class="col-md-3 col-sm-6">
+              City:
+                 <input type="text" formControlName="city" [(ngModel)]="city">
+            </label >    
+            <label class="col-md-2 col-sm-4">
+                <button type="button" class="btn btn-primary" (click)="reset()">Reset</button>
+            </label>
+            <label class="col-md-2 col-sm-4">
+                <button type="button" class="btn btn-primary" (click)="getWeather(country,city)">Search</button>
+            </label>
+            <label class="col-md-2 col-sm-4">
+                <button type="button" class="btn btn-primary "><a routerLink="/home" class="text-danger">Go Bak</a></button>
+            </label>
+            
+        </div>      
+        <div  class="show" *ngIf="show">        
+         <div class="row">
+            <label class="col-md-4 col-sm-6">
+                 City:{{city}}
+            </label>
+            <label class="col-md-4 col-sm-6">
+                 Country:{{country}}
+            </label>
+            <label class="col-md-4 col-sm-6">
+                Date:{{date}}
+            </label>     
+           
+          </div>
+         <div class="row">
+            <label class="col-md-4 col-sm-6">
+                Temerature:{{temp}}
+
+            </label>
+            <label class="col-md-4 col-sm-6">
+                Min-Temperature:{{minTemp}}
+            </label>
+            <label class="col-md-4 col-sm-6">
+                Max-Temperature:{{maxTemp}}
+            </label>
+         </div>
+         <div class="row">
+             <label class="col-md-4 col-sm-6">
+                 Humidity:{{humidity}}%
+             </label>
+             <label class="col-md-4 col-sm-6">
+                 Weather:{{weather}}
+             </label>
+             <label class="col-md-4 col-sm-6">
+                 Wind Speed：{{windSpeed}}公里/时
+             </label>
+         </div>
+        </div>
+        
+       
+        
+        
+            
+           
+         
+    </form>
+    
+
+</div>

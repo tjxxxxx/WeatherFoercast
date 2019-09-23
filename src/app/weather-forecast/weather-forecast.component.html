@@ -1,0 +1,81 @@
+<div class="container-fluid">
+        <form [formGroup]="forecastForm">
+            <div class="row">      
+               <label class="col-md-3 col-sm-6">
+                     Country: 
+                     <input type="text" formControlName="country" [(ngModel)]="country" />
+                 </label> 
+                 <label class="col-md-3 col-sm-6">
+                  City:
+                     <input type="text" formControlName="city" [(ngModel)]="city">
+                </label >    
+                <label class="col-md-2 col-sm-4">
+                    <button type="button" class="btn btn-primary" (click)="reset()">Reset</button>
+                </label>
+                <label class="col-md-2 col-sm-4">
+                    <button type="button" class="btn btn-primary" (click)="getForecastWeather(country,city)">Search</button>
+                </label>
+                <label class="col-md-2 col-sm-4">
+                    <button type="button" class="btn btn-primary "><a routerLink="/home" class="text-danger">Go Bak</a></button>
+                </label>
+            </div>
+        </form>
+        <hr>
+        <div *ngIf="show">
+            <div class="row col-md-4 col-sm-6">
+                <label>
+                    City:{{city}}
+                </label>
+            </div>
+            <div class="row col-md-4 col-sm-6">
+                <label>
+                    Country:{{country}}
+                </label>
+            </div>
+            <div class="row">
+                <label class="col-md-4 col-sm-6">
+                    Forecast Period:{{date}}-{{latestDay}}
+                </label> 
+                <label class="col-md-4 col-sm-6">
+                    <button type="button" class="btn btn-success" (click)="getCharts()">Get Charts</button>
+                </label>
+             
+            </div>
+            <hr>
+
+        </div>
+        <div *ngIf="tableShow">
+                <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Day</th>
+                                <th>Temperature</th>
+                                <th>Huminity</th>
+                                <th>Weather Description</th>
+                            </tr>
+                        </thead>
+                        <tbody >
+                            <tr *ngFor="let weather of this.finalList">
+                                <td>
+                                      {{weather.dt_txt}}
+                                </td>
+                                <td>
+                                    {{weather.main.temp-273}}℃
+                                </td> 
+                                <td>
+                                    {{weather.main.humidity}}%
+                                </td>
+                                <td>
+                                    {{weather.weather[0].description}} 
+                                </td>
+                            </tr>
+                                         
+                        </tbody>
+                    </table>
+
+        </div>
+        
+        <div class="center" echarts [options]="options" style="height:400px;width:500px;"></div>
+        
+        
+</div>

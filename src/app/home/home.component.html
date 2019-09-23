@@ -1,0 +1,59 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div class="container-fluid">
+
+        <div class="row col-md-12 col-sm-12  ">
+          <h1 class="title">What do you want to know?</h1>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3 col-sm-12 text-center">
+              <button type="button" class="btn btn-primary text-center text-success " >
+                <a routerLink="/today" class="text-danger"> Today Weather</a> 
+            </button>
+           </div>
+           <div class="col-md-6 col-md-offset-3 col-sm-12 text-center">
+              <button type="button" class="btn btn-primary">
+                <a routerLink="/forecast" class="text-danger">Weather Forecase</a></button>
+           </div>
+        
+        </div>
+        <hr>
+        <div class="row ">
+          <div class="col-center-block">
+              <ngb-carousel >
+                <ng-template ngbSlide>
+                  <div class="picsum-img-wrapper">
+                    <img src="../assets/img/1.jpeg" width="500px" height="450px" alt="Random first slide">
+                  </div>
+                  <div class="carousel-caption">
+                    <h3>First slide label</h3>
+                    <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                  </div>
+                </ng-template>
+                <ng-template ngbSlide>
+                  <div class="picsum-img-wrapper">
+                    <img src="../assets/img/2.jpg" width="500px" height="450px" alt="Random second slide">
+                  </div> 
+                  <div class="carousel-caption">
+                    <h3>Second slide label</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                  </div>
+                </ng-template>
+                <ng-template ngbSlide>
+                  <div class="picsum-img-wrapper">
+                    <img src="../assets/img/3.png"  width="500px" height="450px"alt="Random third slide">
+                  </div>
+                  <div class="carousel-caption">
+                    <h3>Third slide label</h3>
+                    <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+                  </div>
+                </ng-template>
+              </ngb-carousel>
+          </div>
+      
+              <hr>
+              
+        </div>
+        
+  
+      
